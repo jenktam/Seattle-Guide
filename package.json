@@ -1,0 +1,14 @@
+{
+  "name": "seattle-guide",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jen Tam",
+  "license": "ISC",
+  "dependencies": {
+    "gdal": "^0.9.6"
+  }
+}

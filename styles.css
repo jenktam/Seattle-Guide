@@ -1,0 +1,16 @@
+body {
+  background-color: rgb(241, 238, 238);
+  font-family: 'Oswald', Arial;
+}
+
+#mapContainer {
+  height: 900px;
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+  text-decoration: underline;
+  font-size: 45px;
+  letter-spacing: 2px;
+}
