@@ -4,9 +4,10 @@
 <head>
     <meta charset="utf-8">
     <title>Maps</title>
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="http://d3js.org/d3.v3.min.js"></script>
     <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 </head>
 
@@ -14,18 +15,7 @@
     <h1>Seattle Guide</h1>
     <div id="mapContainer"></div>
 
-<script>
-        //initialize the map
-        var map = L.map('mapContainer')
-        .setView([47.65, -122.4], 11);
-        //Add a basemap
-        L.tileLayer('http://{s}.tiles.mapbox.com/v3/spatialdev.map-c9z2cyef/{z}/{x}/{y}.png')
-        .addTo(map);
-
-        var marker = L.marker([47.620506, -122.349277]).bindPopup("<b>Hello Tourist</b><br>I am the Seattle Space Needle.")
-        .openPopup()
-        .addTo(map);
-    </script>
+<script src="js/map.js"></script>
 
 </body>
 </html>
