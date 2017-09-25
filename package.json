@@ -2,13 +2,22 @@
   "name": "seattle-guide",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server/index.js"
   },
   "author": "Jen Tam",
   "license": "ISC",
   "dependencies": {
-    "gdal": "^0.9.6"
+    "body-parser": "^1.18.2",
+    "env2": "^2.2.0",
+    "express": "^4.15.5",
+    "gdal": "^0.9.6",
+    "yelpv3": "^1.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1",
+    "volleyball": "^1.4.1"
   }
 }
