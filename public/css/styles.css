@@ -27,3 +27,7 @@ h1 {
   font-size: 45px;
   letter-spacing: 2px;
 }
+
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+  width: 200px;
+}

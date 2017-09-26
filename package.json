@@ -2,22 +2,31 @@
   "name": "seattle-guide",
   "version": "1.0.0",
   "description": "",
-  "main": "server/index.js",
+  "main": "./server/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server/index.js"
+    "start": "webpack --watch & nodemon ./server/index.js"
   },
   "author": "Jen Tam",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.16.2",
     "body-parser": "^1.18.2",
     "env2": "^2.2.0",
     "express": "^4.15.5",
     "gdal": "^0.9.6",
+    "leaflet": "^1.2.0",
     "yelpv3": "^1.2.1"
   },
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.0",
+    "babel-loader": "^7.1.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
     "nodemon": "^1.12.1",
-    "volleyball": "^1.4.1"
+    "volleyball": "^1.4.1",
+    "webpack": "^3.6.0"
   }
 }

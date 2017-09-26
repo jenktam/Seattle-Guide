@@ -6,8 +6,14 @@ var yelp = new Yelp({
   app_secret: process.env.YELP_CLIENT_SECRET
 })
 
-router.get('/', (req, res, next) => {
-    yelp.search({term: 'food', location: '98107', limit: 1})
+router.get('/:latitude/:longitude', (req, res, next) => {
+    yelp.search({
+        term: 'food',
+        latitude: req.params.latitude,
+        longitude: req.params.longitude,
+        // limit: 5,
+        radius: 1000,
+    })
     .then((data) => {
         res.send(data)
     })
