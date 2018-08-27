@@ -982,7 +982,13 @@ function renderNearbyLocations(map, currentLatitude, currentLongitude) {
     let allLocations = locations.data.businesses;
 
     for (let i = 0; i < allLocations.length; i++) {
-      let marker = L.marker([allLocations[i].coordinates.latitude, allLocations[i].coordinates.longitude]).bindPopup(`<b>${allLocations[i].name}</b><br><img style="width="100px"; height="100px"src="${allLocations[i].image_url}"/><p>Price: ${allLocations[i].price}</p><p>Rating: ${allLocations[i].rating}</p><p>Review Count: ${allLocations[i].review_count}</p><a href="${allLocations[i].url}">More Info</a>`).openPopup().addTo(map);
+      let marker = L.marker([allLocations[i].coordinates.latitude, allLocations[i].coordinates.longitude]).bindPopup(`<b>${allLocations[i].name}</b>
+        <br><img style="width="100px"; height="100px"src="${allLocations[i].image_url}"/>
+        <p>Phone Number: ${allLocations[i].display_phone}</p>
+        <p>Price: ${allLocations[i].price}</p>
+        <p>Rating: ${allLocations[i].rating}</p>
+        <p>Review Count: ${allLocations[i].review_count}</p>
+        <a href="${allLocations[i].url}">More Info</a>`).openPopup().addTo(map);
     }
   });
 }

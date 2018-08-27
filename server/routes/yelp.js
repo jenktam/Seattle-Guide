@@ -1,21 +1,22 @@
 const router  = require('express').Router()
-var Yelp      = require('yelpv3')
+const axios = require('axios')
 
-var yelp = new Yelp({
-  app_id: process.env.YELP_CLIENT_ID,
-  app_secret: process.env.YELP_CLIENT_SECRET
+router.get('/', (req, res) => {
+    res.send(process.env.SECRET_KEY)
 })
-
 router.get('/:latitude/:longitude', (req, res, next) => {
-    yelp.search({
-        term: 'food',
-        latitude: req.params.latitude,
-        longitude: req.params.longitude,
-        // limit: 5,
-        radius: 1000,
+
+    const yelpInstance = axios.create({
+        baseURL: 'https://api.yelp.com/v3',
+        timeout: 1000,
+        headers: { 'Authorization': `Bearer ${process.env.YELP_API_KEY}` }
     })
-    .then((data) => {
-        res.send(data)
+
+
+    // yelpInstance.get(`/transactions/delivery/search?term=food&latitude=${req.params.latitude}&longitude=${req.params.longitude}`)
+    yelpInstance.get(`/businesses/search?term=plants&latitude=${req.params.latitude}&longitude=${req.params.longitude}`)
+    .then((result) => {
+        res.send(result.data)
     })
     .catch((err) => {
         console.error(err)
